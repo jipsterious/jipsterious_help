@@ -1,0 +1,9 @@
+{
+	"name": "MyTestADFPlaything",
+	"location": "southeastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "36e5154b-e7c8-453a-86d9-68c274310f05",
+		"tenantId": "3edf6a14-70bd-475d-b3e3-2b5f0f7480d0"
+	}
+}
