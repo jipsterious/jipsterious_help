@@ -17,25 +17,25 @@ I've updated the "low mode" only, like this:
                 <fan_mapping_config name="internal" pwm="pwm2" order="1"/>
                 <fan_mapping_config name="internal" pwm="pwm2" order="2"/>
 
-                <manual_config name="cpu_temperature" threshold="2" period="30" temp="0" fan_speed="**30**"/>
+                <manual_config name="cpu_temperature" threshold="2" period="30" temp="0" fan_speed="30"/>
                 <manual_config name="cpu_temperature" threshold="2" period="30" temp="66" fan_speed="100"/>
                 <manual_config name="cpu_temperature" threshold="2" period="30" temp="76" fan_speed="150"/>
                 <manual_config name="cpu_temperature" threshold="2" period="30" temp="84" fan_speed="200"/>
                 <manual_config name="cpu_temperature" threshold="2" period="30" temp="90" fan_speed="255"/>
 
-                <manual_config name="disk_temperature" threshold="2" period="300" temp="0" fan_speed="**30**"/>
+                <manual_config name="disk_temperature" threshold="2" period="300" temp="0" fan_speed="30"/>
                 <manual_config name="disk_temperature" threshold="2" period="300" temp="47" fan_speed="100"/>
                 <manual_config name="disk_temperature" threshold="2" period="300" temp="52" fan_speed="150"/>
                 <manual_config name="disk_temperature" threshold="2" period="300" temp="56" fan_speed="200"/>
                 <manual_config name="disk_temperature" threshold="2" period="300" temp="58" fan_speed="255"/>
 
-                <manual_config name="m2_temperature" threshold="2" period="30" temp="0" fan_speed="**30**"/>
+                <manual_config name="m2_temperature" threshold="2" period="30" temp="0" fan_speed="30"/>
                 <manual_config name="m2_temperature" threshold="2" period="30" temp="57" fan_speed="100"/>
                 <manual_config name="m2_temperature" threshold="2" period="30" temp="62" fan_speed="150"/>
                 <manual_config name="m2_temperature" threshold="2" period="30" temp="65" fan_speed="200"/>
                 <manual_config name="m2_temperature" threshold="2" period="30" temp="68" fan_speed="255"/>
 
-                <manual_config name="nic_temperature" threshold="2" period="30" temp="0" fan_speed="**30**"/>
+                <manual_config name="nic_temperature" threshold="2" period="30" temp="0" fan_speed="30"/>
                 <manual_config name="nic_temperature" threshold="2" period="30" temp="78" fan_speed="150"/>
                 <manual_config name="nic_temperature" threshold="2" period="30" temp="86" fan_speed="200"/>
                 <manual_config name="nic_temperature" threshold="2" period="30" temp="92" fan_speed="255"/>
