@@ -1,6 +1,7 @@
 # jipsterious_help
 
 1. Update the scemd.xml file
+
 DUAL_MODE_HIGH is for the "cool mode" (i.e., when Synology keeps things cooler at the expense of noise)
 DUAL_MODE_LOW = "quiet mode"
 I've updated the "low mode" only, like this:
@@ -40,9 +41,8 @@ I've updated the "low mode" only, like this:
                 <manual_config name="nic_temperature" threshold="2" period="30" temp="92" fan_speed="255"/>
    <!-- Etc. -->
 </scemd>
-📋 Copy-paste-friendly snippet
 
 2. Restart the scemd service
-From the SSH session:
 
+From the SSH session:
 systemctl restart scemd
