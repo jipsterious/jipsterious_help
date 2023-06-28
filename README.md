@@ -1,6 +1,6 @@
 # jipsterious_help
 
-1. Update the scemd.xml file
+1. Update /usr/syno/etc.defaults/scemd.xml file.
 
 DUAL_MODE_HIGH is for the "cool mode" (i.e., when Synology keeps things cooler at the expense of noise)
 DUAL_MODE_LOW = "quiet mode"
