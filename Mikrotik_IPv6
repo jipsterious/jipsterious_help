@@ -1,0 +1,41 @@
+TO document my stpes on how to get IPv6 with Mikrotik.
+
+/ipv6 dhcp-client option
+add code=23 name=PublicDNS value="'2606:4700:4700::1111''2001:4860:4860::8888'" ; google DNS
+/ipv6 settings
+set accept-router-advertisements=yes max-neighbor-entries=8192
+/ipv6 address
+add from-pool=unifiv6pool interface=bridge_main
+/ipv6 dhcp-client
+add add-default-route=yes interface=pppoe-unifi pool-name=unifiv6pool rapid-commit=no request=prefix use-peer-dns=no
+/ipv6 dhcp-server option sets
+add name=PublicDNS options=PublicDNS-ipv6
+/ipv6 firewall address-list
+add address=::/128 comment="defconf: unspecified address" list=bad_ipv6
+add address=::1/128 comment="defconf: lo" list=bad_ipv6
+add address=fec0::/10 comment="defconf: site-local" list=bad_ipv6
+add address=::ffff:0.0.0.0/96 comment="defconf: ipv4-mapped" list=bad_ipv6
+add address=::/96 comment="defconf: ipv4 compat" list=bad_ipv6
+add address=100::/64 comment="defconf: discard only " list=bad_ipv6
+add address=2001:db8::/32 comment="defconf: documentation" list=bad_ipv6
+add address=2001:10::/28 comment="defconf: ORCHID" list=bad_ipv6
+add address=3ffe::/16 comment="defconf: 6bone" list=bad_ipv6
+add address=fe80::/16 list=allowed
+add address=ff02::/16 comment=multicast list=allowed
+/ipv6 firewall filter
+add action=accept chain=input comment="defconf: accept established,related,untracked" connection-state=established,related,new,untracked log-prefix=ipv6:
+add action=accept chain=forward comment="defconf: accept established, related, untracked" connection-state=established,related,untracked
+add action=accept chain=input comment="defconf: accept DHCPv6-Client prefix delegation." dst-port=546 protocol=udp
+add action=accept chain=input comment="defconf: accept ICMPv6" protocol=icmpv6
+add action=accept chain=forward comment="defconf: Allow local traffic." in-interface=!pppoe-unifi
+add action=accept chain=input comment="defconf: accept UDP traceroute" port=33434-33534 protocol=udp
+add action=accept chain=input comment="allow allowed addresses"
+add action=accept chain=forward comment="defconf: allow all traffic"
+add action=drop chain=input comment="defconf: drop LL from public" in-interface=pppoe-unifi src-address=fe80::/10
+add action=drop chain=forward comment=invalid connection-state=invalid log=yes log-prefix=ipv6,invalid
+/ipv6 firewall mangle
+add action=change-mss chain=forward disabled=yes new-mss=clamp-to-pmtu passthrough=no protocol=tcp tcp-flags=syn
+/ipv6 nd
+set [ find default=yes ] advertise-mac-address=no dns=2001:4860:4860::8888,2001:4860:4860::8844 hop-limit=64 mtu=1508 ra-delay=5s ra-preference=high
+/ipv6 nd prefix
+add interface=bridge_main
