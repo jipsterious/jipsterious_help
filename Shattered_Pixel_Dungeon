@@ -1,0 +1,18 @@
+Shattered Pixel Dungeon - mod from official.
+To prevent getting overwritten by the README.md in the main branch, I've started a new file to document what I changed.
+
+Mods are: 1- Starting HP at 300. actors/hero/Hero.java: a) HP = HT = 300; b) HT = 300 + 5*(lvl-1) + HTBoost;
+
+2- Starting STR at 15. actors/hero/Hero.java: public static final int STARTING_STR = 16;
+
+3- Starting DEF at 10 (just felt like syncing with ATK). actors/hero/Hero.java: private int defenseSkill = 10;
+
+4- 1500 steps before you start getting hungry. actors/buffs/Hunger.java: public static final float HUNGRY = 1500f;
+
+5- 3000 steps before you start starving. actors/buffs/Hunger.java: public static final float STARVING = 3000f;
+
+6- 5 SoU per 5 levels. Dungeon.java, in class souNeeded: souLeftThisSet = 5 - (LimitedDrops.UPGRADE_SCROLLS.count - (depth / 5) * 3);
+
+7- 2 Arcane Stylus per 5 levels. Dungeon.java, in class asNeeded: int asLeftThisSet = 2 - (LimitedDrops.ARCANE_STYLI.count - (depth / 5));
+
+8- Increase version level (to stop Play Store prompting?) build.gradle: appVersionName = '2.4.2'
