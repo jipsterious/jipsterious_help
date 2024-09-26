@@ -1,7 +1,8 @@
 Shattered Pixel Dungeon - mod from official.
 To prevent getting overwritten by the README.md in the main branch, I've started a new file to document what I changed.
 
-Mods are: 1- Starting HP at 300. actors/hero/Hero.java: a) HP = HT = 300; b) HT = 300 + 5*(lvl-1) + HTBoost;
+Mods are: 
+1- Starting HP at 300. actors/hero/Hero.java: a) HP = HT = 300; b) HT = 300 + 5*(lvl-1) + HTBoost;
 
 2- Starting STR at 15. actors/hero/Hero.java: public static final int STARTING_STR = 16;
 
