@@ -3,7 +3,7 @@ Vebosed the commands.
 
 1. SSH into Synology NAS - 'ssh <admin user>@NAS IP or hostname e.g. ssh admin@nas'.
 
-2. Sudo to root user 'sudo -i'.
+2. Sudo to root user 'sudo -i'.  Enter your admin password.
 
 3. Go to directory 'cd /usr/syno/etc.defaults'.
 
