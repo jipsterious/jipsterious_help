@@ -1,7 +1,16 @@
 # jipsterious_help
+Vebosed the commands.
 
-1. Update /usr/syno/etc.defaults/scemd.xml file.
+1. SSH into Synology NAS - 'ssh <admin user>@NAS IP or hostname e.g. ssh admin@nas'.
 
+2. Sudo to root user 'sudo -i'.
+
+3. Go to directory 'cd /usr/syno/etc.defaults'.
+
+4. Run your favourite text editor and update scemd.xml file 'vi scemd.xml'.
+Editors available in Synology: vi, vim.  Personally, I'm used to vi so I use that.
+
+Scroll down the file and look for fan speeds.
 DUAL_MODE_HIGH is for the "cool mode" (i.e., when Synology keeps things cooler at the expense of noise)
 DUAL_MODE_LOW = "quiet mode"
 I've updated the "low mode" only, like this:
