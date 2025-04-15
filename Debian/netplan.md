@@ -32,7 +32,7 @@ network:
         lacp-rate: fast
         mii-monitor-interval: 100
 
-vlan-
+vlan.yaml-
 network:
   version: 2
   renderer: networkd
