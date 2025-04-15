@@ -1,10 +1,12 @@
-Netplan for dummy (me)
+# Netplan for dummy (me)
 
 Using networkd service in the background.
 
-Netplan iterates in sorting order.
+## Home Network Config
+Netplan iterates network configuration in sorting order.
 
 eno1.yaml-
+```
 network:
   version: 2
   renderer: networkd
@@ -13,8 +15,9 @@ network:
       dhcp4: true
       dhcp4-overrides:
         route-metric: 50
-
+```
 bond1.yaml-
+```
 network:
   version: 2
   renderer: networkd
@@ -31,8 +34,9 @@ network:
         mode: 802.3ad
         lacp-rate: fast
         mii-monitor-interval: 100
-
+```
 vlan.yaml-
+```
 network:
   version: 2
   renderer: networkd
@@ -47,3 +51,7 @@ network:
         route-metric: 150
         use-routes: no
       dhcp6: no
+```
+## Things I still need to figure out.
+1. Bridge LXC network to host network.
+2. Setup VLAN for bond network.
