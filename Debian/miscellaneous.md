@@ -7,6 +7,8 @@
 3. Create/edit qbittorrent service in systemd.
 4. Set qbittorrent to start at boot.
 
+Note: put in the RequiesMountsFor to check the download directories are online before running.
+
 qbittorrent-nox.service configuration
 ```
 [Unit]
