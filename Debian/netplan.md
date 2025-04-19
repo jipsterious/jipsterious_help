@@ -41,7 +41,8 @@ network:
   version: 2
   renderer: networkd
   ethernets:
-    enp6s0f1: {}
+    enp6s0f1:
+      link-local: [] #to remove ipv6 local link from this interface as this is local VLAN interface.
   vlans:
     vlan40:
       id: 40
