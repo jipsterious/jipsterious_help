@@ -29,4 +29,4 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 ## Useful miscellaneous commands
-1. RSA convert encrypted keys - openssl rsa -in <key> -out <key>
+1. RSA convert encrypted keys - openssl rsa -in keyfile -out keyfile
