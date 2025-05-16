@@ -28,3 +28,5 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 ```
+## Useful miscellaneous commands
+1. RSA convert encrypted keys - openssl rsa -in <key> -out <key>
