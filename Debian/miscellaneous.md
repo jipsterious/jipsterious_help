@@ -31,3 +31,5 @@ WantedBy=multi-user.target
 ## Useful miscellaneous commands
 1. RSA convert encrypted keys - openssl rsa -in keyfile -out keyfile
 2. Find a working IPv6 address - ip addr show dev "NIC NAME" | grep -v 'deprecated' | sed -e 's!.*inet6 \([^ ]*\)\/.*$!\1!;t;d' |head -1
+3. NVidia container toolkit stopped working after updating to Trixie - rerun 'sudo nvidia-ctk runtime configure --runtime=docker'.
+
